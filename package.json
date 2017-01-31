@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^2.0.33",
-    "@types/lodash": "^4.14.37",
+    "@types/lodash": "^3.10.0",
     "@types/mocha": "^2.2.32",
     "@types/requirejs": "^2.1.28",
     "@types/sinon": "^1.16.31",
@@ -79,6 +79,6 @@
   },
   "dependencies": {
     "jquery": "^3.1.1",
-    "lodash": "^4.16.3"
+    "lodash": "^3.10.1"
   }
 }

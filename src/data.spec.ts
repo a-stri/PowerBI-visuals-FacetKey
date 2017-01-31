@@ -591,7 +591,7 @@ describe('.convertToFacetsVisualData', () => {
     it('should limit the number of facets by initial facetCountSetting', () => {
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
         });
         const facetsData = result.facetsData;
         const locGroup = <FacetGroup>getFacetGroup(facetsData, 'location');
@@ -602,7 +602,7 @@ describe('.convertToFacetsVisualData', () => {
         sinon.stub(utils, 'otherLabelTemplate').withArgs(1).returns('Label1');
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
         });
         const facetsData = result.facetsData;
         const locGroup = <FacetGroup>getFacetGroup(facetsData, 'location');
@@ -628,7 +628,7 @@ describe('.convertToFacetsVisualData', () => {
         };
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
         });
         const facetsData = result.facetsData;
         expect(facetsData[0].key).to.equal('icon_class');
@@ -643,7 +643,7 @@ describe('.convertToFacetsVisualData', () => {
         };
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
         });
         const facetsData = result.facetsData;
         expect(facetsData[1].key).to.equal('location');
@@ -676,7 +676,7 @@ describe('.convertToFacetsVisualData', () => {
     it('should populate facets selection data with selction count label', () => {
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { display: { selectionCount: true}})
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { display: { selectionCount: true}})
         });
         const selectionData = result.facetsSelectionData;
         const orgGroup = <any>getFacetGroup(selectionData, 'organization');
@@ -718,7 +718,7 @@ describe('.convertToFacetsVisualData', () => {
 
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetCount: {initial: 1, increment: 50}})
         });
         const facetsData = result.facetsData;
         const locGroup = <FacetGroup>getFacetGroup(facetsData, 'location');
@@ -783,7 +783,7 @@ describe('.convertToFacetsVisualData', () => {
         };
         result = dataConversion.convertToFacetsVisualData(aggregatedData, {
             colors: [],
-            settings: _.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
+            settings: <FacetKeySettings>_.assign({}, DEFAULT_SETTINGS, { facetState: facetState })
         });
         const facetsData = result.facetsData;
         const dateGroup = <FacetGroup>getFacetGroup(facetsData, 'date');

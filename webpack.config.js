@@ -30,10 +30,16 @@ module.exports = {
             },
         ]
     },
-    externals: [
-        {
-            jquery: "jQuery",
-            lodash: "_"
-        },
-    ]
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            _: 'lodash',
+        })
+    ],
+    // externals: [
+    //     {
+    //         jquery: "jQuery",
+    //         lodash: "_"
+    //     },
+    // ]
 };

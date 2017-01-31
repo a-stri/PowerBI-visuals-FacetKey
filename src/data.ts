@@ -296,23 +296,24 @@ function createBucket(targetObj: any, dp: DataPoint) {
 function formatValue(defaultFormatter: IValueFormatter, value: any, defaultValue: any = '') {
     const smallFormatter = powerbi.visuals.valueFormatter.create({format: 'O', value: 0});
     const bigFormatter = powerbi.visuals.valueFormatter.create({format: 'O', value: 1e6});
-    if (value) {
-        if (defaultFormatter) {
-            return defaultFormatter.format(value);
-        } else if (value instanceof Date) {
-            return value.toDateString();
-        } else if (typeof(value) === 'number') {
-            if (value < 1e6 && value > -1e6) {
-                return smallFormatter.format(value);
-            } else {
-                return bigFormatter.format(value);
-            }
-        } else {
-            return value;
-        }
-    } else {
-        return defaultValue;
-    }
+    // if (value) {
+    //     if (defaultFormatter) {
+    //         return defaultFormatter.format(value);
+    //     } else if (value instanceof Date) {
+    //         return value.toDateString();
+    //     } else if (typeof(value) === 'number') {
+    //         if (value < 1e6 && value > -1e6) {
+    //             return smallFormatter.format(value);
+    //         } else {
+    //             return bigFormatter.format(value);
+    //         }
+    //     } else {
+    //         return value;
+    //     }
+    // } else {
+    //     return defaultValue;
+    // }
+    return value || defaultValue;
 }
 
 /**

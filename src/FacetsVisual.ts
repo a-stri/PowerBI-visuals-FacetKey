@@ -107,7 +107,7 @@ export default class FacetsVisual implements IVisual {
         this.settings = DEFAULT_SETTINGS;
 
         this.hostServices = options.host.createSelectionManager()['hostServices'];
-        this.colors = options.host.colors;
+        this.colors = options.host.colors || [];
 
         this.facets = new Facets(this.facetsContainer, []);
         this.facetsContainer.prepend(`
@@ -139,7 +139,7 @@ export default class FacetsVisual implements IVisual {
             settings: settings,
             colors: colors,
         });
-        return _.extend({ dataPointsMapData: dataPointsMapData }, facetsData);
+        return <FacetsVisualData>_.extend({ dataPointsMapData: dataPointsMapData }, facetsData);
     }
 
 
