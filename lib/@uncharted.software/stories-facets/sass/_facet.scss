@@ -221,8 +221,7 @@
 			}
 
 			.facet-sparkline-total {
-				stroke: black;
-				stroke-dasharray: 1, 3;
+				stroke: rgba(155, 155, 155, 0.5);
 			}
 			.facet-sparkline-selected {
 				stroke: $facet_bar_selected_color;
